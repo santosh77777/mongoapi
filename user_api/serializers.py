@@ -41,4 +41,8 @@ class StudentProfileSerializer(serializers.ModelSerializer):
         depth = 1
 
 
+class PhoneModelSerializer(serializers.ModelSerializer):
 
+    class Meta:
+        model = phoneModel
+        fields = '__all__'
