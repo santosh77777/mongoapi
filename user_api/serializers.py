@@ -6,7 +6,7 @@ class BadgeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Badge
-        fields = '__all__'
+        fields = ['badge_id', 'name']
 
 class AchivementSerializer(serializers.ModelSerializer):
     
@@ -38,6 +38,7 @@ class StudentProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = StudentProfile
         fields = '__all__'
+        depth = 1
 
 
 

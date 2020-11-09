@@ -83,13 +83,13 @@ MONGOADMIN_OVERRIDE_ADMIN = True
 
 # MongoDB Databases
 MONGODB_DATABASES = {
-    'default': {'name': 'user_api'}
+    'default': {'name': 'idiosnow'}
 }
 
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'user_api',
+        'NAME': 'idiosnow',
     }
 }
 
