@@ -45,7 +45,7 @@ connection.close()
 
 
 # # insert record
-# data = {"Name": "Arun","Address": "goregoan"}
+# data = {"Name": "User","Address": "a"}
 # id = insert_record(data)
 # print(id)
 #
@@ -60,7 +60,7 @@ connection.close()
 #
 # # update specific record
 # document_id ='5e7b16e13b61b22a8d54c2b5'
-# data = {'Name': 'Hiren'}
+# data = {'Name': 'User'}
 # ack = update_existing(document_id, data)
 # print(ack)
 #
@@ -71,6 +71,6 @@ connection.close()
 #
 # # update specific record if not exist _id then create records.
 # document_id ='5e7b16e13b61b22a8d54c2b5'
-# data = {'Name': 'Hiren',"Address": "vivar"}
+# data = {'Name': 'User',"Address": "a"}
 # ack = update_or_create(document_id, data)
 # print(ack)

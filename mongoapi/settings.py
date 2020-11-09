@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework_mongoengine',
+    'django_mongoengine',
+    'django_mongoengine.mongo_auth',
+    'django_mongoengine.mongo_admin',
+    'user_api'
 ]
 
 MIDDLEWARE = [
@@ -69,17 +75,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mongoapi.wsgi.application'
 
+MONGOADMIN_OVERRIDE_ADMIN = True
+
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+# MongoDB Databases
+MONGODB_DATABASES = {
+    'default': {'name': 'user_api'}
 }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'user_api',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -118,3 +130,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "user_api/static"),
+)
+
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/images')
+
+
+
+# SESSION_ENGINE = 'django_mongoengine.sessions'
+# SESSION_SERIALIZER = 'django_mongoengine.sessions.BSONSerializer'
