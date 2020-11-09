@@ -17,13 +17,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
-#from django_mongoengine import mongo_admin
-# mongo_admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('user_api.urls')),
-    #path('mongoadmin/', mongo_admin.site.urls),
+    
 ]
 
 # let django built-in server serve static and media content
