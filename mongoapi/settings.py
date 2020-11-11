@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'phone_verify',
     'rest_framework',
     'user_api'
 ]
@@ -138,3 +139,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/images')
 
 # SESSION_ENGINE = 'django_mongoengine.sessions'
 # SESSION_SERIALIZER = 'django_mongoengine.sessions.BSONSerializer'
+
+
+# Settings for phone_verify
+PHONE_VERIFICATION = {
+    'BACKEND': 'phone_verify.backends.twilio.TwilioBackend',
+    'OPTIONS': {
+        'SID': 'ACdc341ca1221c5eb9cfbc108e2e14236e',
+        'SECRET': 'd27d5eff7750b7b765f6ed625a858c36',
+        'FROM': '+12029183292',
+        'SANDBOX_TOKEN':'123456',
+    },
+    'TOKEN_LENGTH': 6,
+    'MESSAGE': 'Welcome to {app}! Please use security code {security_code} to proceed.',
+    'APP_NAME': 'Phone Verify',
+    'SECURITY_CODE_EXPIRATION_TIME': 3600,  # In seconds only
+    'VERIFY_SECURITY_CODE_ONLY_ONCE': False,  # If False, then a security code can be used multiple times for verification
+}
